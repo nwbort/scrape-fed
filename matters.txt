@@ -1,0 +1,4 @@
+# Federal Court files to track, one per line: a file number (NSD1310/2026)
+# or its Commonwealth Courts Portal URL, e.g.
+# https://www.comcourts.gov.au/file/Federal/P/NSD1310/2026/actions
+NSD1310/2026
