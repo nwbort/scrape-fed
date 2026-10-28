@@ -409,7 +409,8 @@ def parse_contact(html: str) -> dict:
         cells = row["cells"]
         if len(cells) >= 2 and cells[0]["header"]:
             key = re.sub(r"\W+", "_", cells[0]["text"].rstrip(":").strip().lower()).strip("_")
-            contact[key] = re.sub(r"\s*,\s*", ", ", cells[1]["text"]).strip(", ")
+            # Empty address lines still get their comma: "170 North Terrace, , ADELAIDE".
+            contact[key] = re.sub(r"(?:\s*,)+\s*", ", ", cells[1]["text"]).strip(", ")
     return contact
 
 
